@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brands Have Sounded Like Robots Long Before AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    text-align: center;
+    max-width: 900px;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
+    margin-bottom: 1.5em;
+  }
+
+  .cycle-wrapper {
+    position: relative;
+    height: clamp(2rem, 5vw, 3.5rem);
+    overflow: hidden;
+  }
+
+  .cycle-word {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 3.5vw, 2.4rem);
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cycle-word.active {
+    opacity: 1;
+    transform: translateY(0);
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .cycle-word.exiting {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>brands have sounded like robots long before AI</h1>
+  <div class="cycle-wrapper">
+    <span class="cycle-word" id="cycleText"></span>
+  </div>
+</div>
+
+<script>
+const words = [
+  "Empower",
+  "Empowering",
+  "Empowerment",
+  "Innovative",
+  "Innovation",
+  "Connect",
+  "Connection",
+  "Creativity",
+  "Inspire",
+  "Inspiring",
+  "Authentic",
+  "Authenticity",
+  "Community",
+  "Purpose-led",
+  "Sustainable",
+  "Sustainability",
+  "Human",
+  "Humanity",
+  "Journey",
+  "Transform",
+  "Transformative",
+  "World",
+  "World-class",
+  "Better world",
+  "Passion",
+  "Passionate",
+  "Storytelling",
+  "Seamless",
+  "Ecosystem",
+  "Curated",
+  "Disruptive",
+  "Disrupt",
+  "Elevate",
+  "Belonging",
+  "\u201CWe believe in a world where\u2026\u201D",
+  "\u201CBringing people together\u201D",
+  "\u201CAt the heart of everything we do\u201D",
+  "\u201CPurpose-led / purpose-driven\u201D",
+  "\u201CEmpowering people to achieve more\u201D",
+  "\u201CThe future of [X]\u201D",
+  "\u201CMore than just a [product]\u201D",
+  "\u201CMake a difference\u201D",
+  "\u201CChange the world\u201D",
+  "\u201CCreate lasting impact\u201D",
+  "\u201CDrive meaningful change\u201D",
+  "\u201CBuild a better future\u201D",
+  "\u201CUnlock potential\u201D",
+  "\u201CRealize full potential\u201D",
+  "\u201CYour journey starts here\u201D",
+  "\u201CEvery step of the way\u201D",
+  "\u201CThroughout your journey\u201D",
+  "\u201CAn experience like no other\u201D",
+  "\u201CRedefining the experience\u201D",
+  "\u201CIt\u2019s not what we do, it\u2019s how we do it\u201D",
+  "\u201CEvery person / everyone / every organization\u201D",
+  "\u201CAround the world / across the globe\u201D",
+  "\u201CFor a better tomorrow\u201D",
+  "\u201CThe next generation of\u2026\u201D",
+  "\u201CLeading the way in\u2026\u201D",
+  "\u201CPioneering the future of\u2026\u201D",
+  "\u201CWe\u2019re on a mission to\u2026\u201D",
+  "\u201CWe believe that\u2026\u201D",
+  "\u201CWe\u2019re passionate about\u2026\u201D",
+  "\u201CWe\u2019re committed to\u2026\u201D",
+  "\u201CWe\u2019re reimagining\u2026\u201D",
+  "\u201CWe\u2019re building a world where\u2026\u201D"
+];
+
+let currentIndex = 0;
+
+const el = document.getElementById('cycleText');
+el.textContent = words[0];
+el.classList.add('active');
+
+function cycle() {
+  el.classList.remove('active');
+  el.classList.add('exiting');
+
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % words.length;
+    el.textContent = words[currentIndex];
+    el.classList.remove('exiting');
+
+    // Force reflow so the browser registers the reset position
+    void el.offsetWidth;
+
+    el.classList.add('active');
+  }, 400);
+}
+
+setInterval(cycle, 2000);
+</script>
+
+</body>
+</html>
