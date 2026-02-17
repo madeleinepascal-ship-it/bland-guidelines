@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brands Have Sounded Like Robots Long Before AI</title>
+<title>Brands Sounded Like Bots Long Before AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -19,34 +19,27 @@
     color: #fff;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .container {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     text-align: center;
-    max-width: 900px;
     padding: 2rem;
-  }
-
-  h1 {
-    font-weight: 900;
-    font-size: clamp(2rem, 6vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    text-transform: lowercase;
-    margin-bottom: 1.5em;
   }
 
   .cycle-wrapper {
     position: relative;
-    height: clamp(2rem, 5vw, 3.5rem);
+    height: clamp(3rem, 8vw, 6rem);
+    width: 100%;
+    max-width: 900px;
     overflow: hidden;
+    margin-bottom: 2rem;
   }
 
   .cycle-word {
@@ -54,10 +47,11 @@
     width: 100%;
     left: 0;
     top: 0;
-    font-weight: 300;
-    font-size: clamp(1.2rem, 3.5vw, 2.4rem);
-    letter-spacing: -0.01em;
-    color: rgba(255, 255, 255, 0.5);
+    font-weight: 900;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -69,22 +63,60 @@
   .cycle-word.active {
     opacity: 1;
     transform: translateY(0);
-    color: rgba(255, 255, 255, 0.5);
   }
 
   .cycle-word.exiting {
     opacity: 0;
     transform: translateY(-20px);
   }
+
+  .subhead {
+    font-weight: 300;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .letter {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .letter p {
+    font-weight: 300;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1.5em;
+  }
+
+  .letter p:last-child {
+    margin-bottom: 0;
+  }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>brands have sounded like robots long before AI</h1>
+<div class="hero">
   <div class="cycle-wrapper">
     <span class="cycle-word" id="cycleText"></span>
   </div>
+  <p class="subhead">Brands sounded like bots long before AI</p>
+</div>
+
+<div class="letter">
+  <p>So, I think the AI-ification of language is a good thing for marketing. We were overusing words like 'human', 'connection', and 'creativity' long before the em dashes came creeping in. Most voice and brand guidelines I've encountered (and yes, occasionally written) could swap out a logo and nobody would notice.</p>
+
+  <p>But finally everyone's paying attention because everyone &ndash; not just brands &ndash; sounds the same. Which means point of view, distinct personality, and interesting words have to come back. Finding a way to be 'helpful while also being honest, thoughtful, and caring about the world' without well-trodden clich&eacute;s or patronizing language is a bonkers challenge. But also a worthwhile one.</p>
+
+  <p>I've spent 20+ years working across advertising agencies and in-house brand teams, on 70+ brands, writing all sorts of copy: from TV scripts and headlines to global brand and voice guidelines, manifestos, websites, emails, social posts, strategies, customer segmentation, and corporate values. I've led multi-market campaign launches, redefined brand strategies, and helped build creative departments from scratch. I know how to move between very different creative cultures and still make the thinking and voice resonate.</p>
+
+  <p>But it's my recent eMBA thesis, The Business of Loneliness (how brands can use creativity and Realist Optimism to foster connection) that got me truly excited about this role. I'm deeply interested in how the language of AI connects with humans and in turn influences their connection with others. This matters hugely, for good and for harm.</p>
+
+  <p>Anthropic uses language to connect people at scale, to information, companionship, and the world. You should also scale in-person connection between the people who use it. Encouraging human language and conversation to thrive will benefit all intelligence. I'm calling this a connection offset and it could be a defining initiative for the smartest, most responsible AI company. Think carbon offset, but for connection. That's the kind of thinking I want to do at Anthropic.</p>
+
+  <p>I would be thrilled to bring my attention to detail in writing, my love of editing, and research expertise in brands and connection to this role. Marketing needed help with its words years ago. Excited that there's still time to smarten things up.</p>
 </div>
 
 <script>
