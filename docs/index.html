@@ -33,29 +33,23 @@
 
   .cycle-wrapper {
     position: relative;
-    height: clamp(3rem, 8vw, 6rem);
+    min-height: clamp(3rem, 8vw, 6rem);
     width: 100%;
     max-width: 900px;
-    overflow: hidden;
     margin-bottom: 2rem;
   }
 
   .cycle-word {
-    position: absolute;
+    display: block;
     width: 100%;
-    left: 0;
-    top: 0;
     font-weight: 900;
-    font-size: clamp(2rem, 6vw, 4.5rem);
-    line-height: 1.05;
+    font-size: clamp(1.6rem, 5vw, 3.5rem);
+    line-height: 1.15;
     letter-spacing: -0.03em;
     text-transform: lowercase;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .cycle-word.active {
@@ -119,47 +113,44 @@
 
 <script>
 const words = [
-  "Empower",
-  "Empowering",
-  "Empowerment",
-  "Innovative",
-  "Innovation",
-  "Connect",
-  "Connection",
-  "Creativity",
-  "Inspire",
-  "Inspiring",
-  "Authentic",
-  "Authenticity",
-  "Community",
-  "Purpose-led",
-  "Sustainable",
-  "Sustainability",
-  "Human",
-  "Humanity",
-  "Journey",
-  "Transform",
-  "Transformative",
-  "World",
-  "World-class",
-  "Better world",
-  "Passion",
-  "Passionate",
-  "Storytelling",
-  "Seamless",
-  "Ecosystem",
-  "Curated",
-  "Disruptive",
-  "Disrupt",
-  "Elevate",
-  "Belonging",
+  "\u201CEmpowering\u201D",
+  "\u201CEmpowering\u201D",
+  "\u201CEmpowerment\u201D",
+  "\u201CInnovative\u201D",
+  "\u201CInnovation\u201D",
+  "\u201CConnect\u201D",
+  "\u201CConnection\u201D",
+  "\u201CCreativity\u201D",
+  "\u201CInspire\u201D",
+  "\u201CInspiring\u201D",
+  "\u201CAuthentic\u201D",
+  "\u201CAuthenticity\u201D",
+  "\u201CCommunity\u201D",
+  "\u201CPurpose\u201D",
+  "\u201CSustainable\u201D",
+  "\u201CSustainability\u201D",
+  "\u201CHuman\u201D",
+  "\u201CHumanity\u201D",
+  "\u201CJourney\u201D",
+  "\u201CTransform\u201D",
+  "\u201CTransformative\u201D",
+  "\u201CWorld-class\u201D",
+  "\u201CBetter world\u201D",
+  "\u201CPassion\u201D",
+  "\u201CPassionate\u201D",
+  "\u201CStorytelling\u201D",
+  "\u201CSeamless\u201D",
+  "\u201CEcosystem\u201D",
+  "\u201CCurated\u201D",
+  "\u201CDisruption\u201D",
+  "\u201CElevate\u201D",
+  "\u201CBelonging\u201D",
   "\u201CWe believe in a world where\u2026\u201D",
   "\u201CBringing people together\u201D",
   "\u201CAt the heart of everything we do\u201D",
-  "\u201CPurpose-led / purpose-driven\u201D",
   "\u201CEmpowering people to achieve more\u201D",
-  "\u201CThe future of [X]\u201D",
-  "\u201CMore than just a [product]\u201D",
+  "\u201CThe future of\u2026\u201D",
+  "\u201CMore than just a\u2026\u201D",
   "\u201CMake a difference\u201D",
   "\u201CChange the world\u201D",
   "\u201CCreate lasting impact\u201D",
@@ -169,20 +160,17 @@ const words = [
   "\u201CRealize full potential\u201D",
   "\u201CYour journey starts here\u201D",
   "\u201CEvery step of the way\u201D",
+  "\u201CJoin the conversation\u201D",
   "\u201CThroughout your journey\u201D",
   "\u201CAn experience like no other\u201D",
   "\u201CRedefining the experience\u201D",
-  "\u201CIt\u2019s not what we do, it\u2019s how we do it\u201D",
-  "\u201CEvery person / everyone / every organization\u201D",
-  "\u201CAround the world / across the globe\u201D",
+  "\u201CFor everybody\u201D",
   "\u201CFor a better tomorrow\u201D",
   "\u201CThe next generation of\u2026\u201D",
   "\u201CLeading the way in\u2026\u201D",
   "\u201CPioneering the future of\u2026\u201D",
   "\u201CWe\u2019re on a mission to\u2026\u201D",
   "\u201CWe believe that\u2026\u201D",
-  "\u201CWe\u2019re passionate about\u2026\u201D",
-  "\u201CWe\u2019re committed to\u2026\u201D",
   "\u201CWe\u2019re reimagining\u2026\u201D",
   "\u201CWe\u2019re building a world where\u2026\u201D"
 ];
@@ -206,10 +194,10 @@ function cycle() {
     void el.offsetWidth;
 
     el.classList.add('active');
-  }, 400);
+  }, 300);
 }
 
-setInterval(cycle, 2000);
+setInterval(cycle, 1200);
 </script>
 
 </body>
